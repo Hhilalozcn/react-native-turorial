@@ -8,9 +8,9 @@ const Tabslayout = () => {
         name="home"
         options={{
           headerShown: true,
-          headerTitle: "Home",
+          headerTitle: "HOME",
           headerTintColor: "#fff",
-          headerStyle: { backgroundColor: "#f4511e" },
+          headerStyle: { backgroundColor: "#eda1be" },
           headerTitleStyle: { fontWeight: "bold" },
         }}
       />
@@ -18,9 +18,9 @@ const Tabslayout = () => {
         name="create"
         options={{
           headerShown: true,
-          headerTitle: "Create",
+          headerTitle: "CREATE",
           headerTintColor: "#fff",
-          headerStyle: { backgroundColor: "#f4511e" },
+          headerStyle: { backgroundColor: "#eda1be" },
           headerTitleStyle: { fontWeight: "bold" },
         }}
       />
@@ -28,9 +28,9 @@ const Tabslayout = () => {
         name="profile"
         options={{
           headerShown: true,
-          headerTitle: "Profil",
+          headerTitle: "PROFİL",
           headerTintColor: "#fff",
-          headerStyle: { backgroundColor: "#f4511e" },
+          headerStyle: { backgroundColor: "#eda1be" },
           headerTitleStyle: { fontWeight: "bold" },
         }}
       />
