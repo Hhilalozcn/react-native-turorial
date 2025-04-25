@@ -1,14 +1,15 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
 const trips = [
   {
     id: 1,
-    title: "Bali'de Yaz",
-    location: 'Bali, Endonezya',
-    date: '2023-07-15',
-    comments: 2,
-    tag: 'Beach',
+    title: 'Paris Macerası',
+    location: 'Paris, Fransa',
+    date: '15 Nisan 2024',
+    tag: 'Şehir Turu',
+    image: require('../../assets/images/imagePlaceholder.jpg'),
+    comments: 5
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const trips = [
     date: '2023-09-22',
     comments: 1,
     tag: 'City',
+    image: require('../../assets/images/newyork.jpeg') // Added missing image
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const trips = [
     date: '2023-06-10',
     comments: 0,
     tag: 'Mountain',
+    image: require('../../assets/images/isvicre.jpeg') // Added missing image
   }
 ]
 
@@ -41,9 +44,11 @@ const Home = () => {
       <View style={styles.cardContainer}>
         {trips.map((trip) => (
           <View key={trip.id} style={styles.card}>
-            <View style={styles.imagePlaceholder}>
-              <Text style={styles.tag}>{trip.tag}</Text>
-            </View>
+            <Image 
+              source={trip.image}
+              style={styles.imagePlaceholder}
+            />
+            <Text style={[styles.tag, styles.tagPosition]}>{trip.tag}</Text>
             <View style={styles.cardContent}>
               <Text style={styles.cardTitle}>{trip.title}</Text>
               <Text style={styles.cardLocation}>{trip.location}</Text>
@@ -53,6 +58,7 @@ const Home = () => {
           </View>
         ))}
       </View>
+
     </ScrollView>
   )
 }
@@ -61,6 +67,11 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     backgroundColor: '#fff'
+  },
+  image: {
+    width: 300, // Görselin genişliği
+    height: 200, // Görselin yüksekliği
+    borderRadius: 10, // Köşeleri yuvarlatma
   },
   title: {
     fontSize: 26,
@@ -111,6 +122,11 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     borderRadius: 10,
     fontSize: 12
+  },
+  tagPosition: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10
   },
   cardContent: {
     padding: 12
